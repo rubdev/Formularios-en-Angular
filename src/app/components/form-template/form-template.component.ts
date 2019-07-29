@@ -18,6 +18,8 @@ import { Usuario } from 'src/app/models/usuario.model';
 export class FormTemplateComponent implements OnInit {
 
   usuarioForm: Usuario;
+  paises: string[] = ['España', 'Francia', 'Inglaterra', 'Portugal', 'Holanda', 'Otro'];
+  sexos: string[] = ['Hombre', 'Mujer', 'Friki'];
 
   constructor() { }
 

@@ -1,6 +1,7 @@
 <h4>Formularios <small>template</small></h4>
 <hr>
-<form>
+<form   #f="ngForm"
+        (ngSubmit)="enviarFormulario( f )" >
 
   <div>
 
@@ -10,7 +11,14 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Nombre">
+               placeholder="Nombre"
+               required
+               [(ngModel)]="usuarioForm.nombre"
+               name="nombre"
+               minlength="6"
+               >
+        <span   *ngIf="f.submitted && f.controls['nombre'].errors"
+                style="color: red" >El nombre es obligatorio (mínimo 6 caracteres)</span>
       </div>
     </div>
 
@@ -20,7 +28,13 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido">
+               placeholder="Apellido"
+               [(ngModel)]="usuarioForm.apellidos"
+               name="apellidos"
+               required
+               >
+        <span   *ngIf="f.submitted && f.controls['apellidos'].errors"
+                style="color: red" >El apellido es obligatorio</span>
       </div>
     </div>
 
@@ -32,7 +46,14 @@
 
       <input class="form-control"
              type="email"
-             placeholder="Correo electrónico">
+             placeholder="Correo electrónico"
+             email
+             required
+             [(ngModel)]="usuarioForm.email"
+             name="email"
+             >
+      <span   *ngIf="f.submitted && f.controls['email'].errors"
+              style="color: red" >El correo es obligatorio y tiene que ser válido</span>
     </div>
   </div>
 

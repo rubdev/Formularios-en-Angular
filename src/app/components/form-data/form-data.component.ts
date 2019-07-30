@@ -7,11 +7,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './form-data.component.html',
   styles: []
 })
-export class FormDataComponent implements OnInit {
+export class FormDataComponent {
 
-  constructor() { }
+  formulario: FormGroup;
 
-  ngOnInit() {
+  constructor() {
+    this.formulario = new FormGroup({
+      nombre: new FormControl( '' ),
+      apellido: new FormControl( '' ),
+      email: new FormControl( '' ),
+    });
+  }
+
+  enviarFormulario() {
+    console.log(this.formulario.value);
+    console.log(this.formulario);
   }
 
 }

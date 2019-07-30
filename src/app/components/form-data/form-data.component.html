@@ -6,7 +6,8 @@
 
   <div>
 
-    <div class="form-group row">
+    <div  [ngClass]="{ 'has-danger': formulario.controls['nombre'].invalid }"
+          class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col-8">
 
@@ -15,6 +16,12 @@
                placeholder="Nombre"
                name="nombre"
                formControlName="nombre">
+
+        <div  *ngIf="formulario.controls['nombre'].invalid"
+              style="color: red">
+          El nombre es obligatorio (mín. 6 caracteres)
+        </div>
+
       </div>
     </div>
 
@@ -24,9 +31,13 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido"
-               name="apellido"
-               formControlName="apellido">
+               placeholder="Apellidos"
+               name="apellidos"
+               formControlName="apellidos">
+        <div  *ngIf="formulario.controls['apellidos'].invalid"
+              style="color: red">
+          El apellido es obligatorio
+        </div>
       </div>
     </div>
 
@@ -41,6 +52,11 @@
              placeholder="Correo electrónico"
              name="email"
              formControlName="email">
+
+      <div  *ngIf="formulario.controls['email'].invalid"
+            style="color: red">
+        El email es obligatorio y debe ser válido
+      </div>
     </div>
   </div>
 
@@ -56,3 +72,5 @@
   </div>
 
 </form>
+
+<h2>{{ formulario.valid }}</h2>

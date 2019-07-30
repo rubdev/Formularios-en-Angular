@@ -60,6 +60,38 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Contraseña</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="text"
+             placeholder="Contraseña"
+             name="pass1"
+             formControlName="pass1">
+      <div  *ngIf="formulario.controls['pass1'].invalid"
+            style="color: red">
+        La contraseña es obligatoria
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Repita contraseña</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="text"
+             placeholder="Repite la contraseña"
+             name="pass2"
+             formControlName="pass2">
+      <div  *ngIf="formulario.controls['pass2'].invalid"
+            style="color: red">
+        La contraseña no es igual a la indicada anteriormente
+      </div>
+    </div>
+  </div>
+
 
 
   <div class="form-group row">

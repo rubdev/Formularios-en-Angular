@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
 import { Usuario } from 'src/app/models/usuario.model';
 
 
@@ -24,12 +24,14 @@ export class FormTemplateComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.usuarioForm = new Usuario();
+    // this.usuarioForm = new Usuario();
   }
 
   enviarFormulario( formulario: NgForm ) {
     console.log('Formulario enviado');
     console.log(formulario);
   }
+
+  
 
 }

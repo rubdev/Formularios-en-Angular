@@ -8,7 +8,7 @@ export class Usuario {
     sexo: string;
     condiciones: boolean;
     */
-
+   
     // PARA FORM DATA
     constructor( nombre: string, apellidos: string, email: string ) {
         this.nombre = nombre;
